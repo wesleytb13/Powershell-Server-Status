@@ -1,39 +1,26 @@
-$ServerDec = Get-Content "c:\DecaturServers.txt"
-$ServerHart = Get-Content "c:\HartselleServers.txt"
-$ServerFL = Get-Content "c:\FloridaServers.txt"
+$FloridaServer = Get-Content "\\file4\shares\IT\Access\FloridaServers.txt"
+$HartselleServer = Get-Content "\\file4\shares\IT\Access\HartselleServers.txt"
 
 while($true)
 {
 Clear-Host
-write-host "`rDecatur Server Status:`r"
-write-host "---------------------------------------------------------`r"
-foreach ($Server in $ServerDec){
+write-host "`rHartselle Server Status`r"
+write-host "------------------------------------------`n"	
+foreach ($Server in $HartselleServer){
 if (test-Connection -ComputerName $Server -count 1 -quiet){
-	write-host "$Server is responding`r" -foreground Green
+	write-host "$Server`r" -foreground Green
 		} else
-		{ write-host "$Server not responding`r" -foreground Red
+		{ write-host "$Server`r" -foreground Red
 		}
 	}
-
-write-host "`r`nHartselle Server Status:`r"
-write-host "---------------------------------------------------------`r"
-foreach ($Server in $ServerHart){
+write-host "`r`nFlorida Server Status`r"
+write-host "------------------------------------------`n"
+foreach ($Server in $FloridaServer){
 if (test-Connection -ComputerName $Server -count 1 -quiet){
-	write-host "$Server is responding`r" -foreground Green
+	write-host "$Server`r" -foreground Green
 		} else
-		{ write-host "$Server not responding`r" -foreground Red
+		{ write-host "$Server`r" -foreground Red
 		}
-	}	
-
-write-host "`r`nFlorida Server Status:`r"
-write-host "---------------------------------------------------------`r"
-foreach ($Server in $ServerFL){
-if (test-Connection -ComputerName $Server -count 1 -quiet){
-	write-host "$Server is responding`r" -foreground Green
-		} else
-		{ write-host "$Server not responding`r" -foreground Red
-		}
-	}	
-	
+	}		
 	Start-Sleep -s 300
 }
