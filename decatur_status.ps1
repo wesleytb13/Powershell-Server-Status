@@ -12,5 +12,5 @@ if (test-Connection -ComputerName $Server -count 1 -quiet){
 		{ write-host "$Server`r" -foreground Red
 		}
 	}	
-	Start-Sleep -s 300
+	Start-Sleep -s 305
 }
