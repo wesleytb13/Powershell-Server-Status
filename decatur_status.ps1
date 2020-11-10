@@ -1,4 +1,4 @@
-$DecaturServer = Get-Content "\\file4\shares\IT\Access\DecaturServers.txt"
+$DecaturServer = Get-Content "[Path to server list]"
 
 while($true)
 {
