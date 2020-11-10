@@ -1,5 +1,5 @@
-$FloridaServer = Get-Content "\\file4\shares\IT\Access\FloridaServers.txt"
-$HartselleServer = Get-Content "\\file4\shares\IT\Access\HartselleServers.txt"
+$FloridaServer = Get-Content "[Path to server list]"
+$HartselleServer = Get-Content "[Path to server list]"
 
 while($true)
 {
